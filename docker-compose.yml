@@ -3,7 +3,6 @@
 services:
 
   mysql:
-    container_name: mysql
     image: mariadb:10.11
     environment:
       MYSQL_ROOT_PASSWORD: "root"
@@ -27,7 +26,6 @@ services:
 
 
   flask-app:
-    container_name: two-tier-app
     build:
       context: .
 
