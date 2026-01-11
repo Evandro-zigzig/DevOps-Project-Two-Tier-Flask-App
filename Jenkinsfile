@@ -18,9 +18,9 @@ pipeline {
         stage('Deploy with docker compose') {
             steps {
                 // Bring down any containers from this project (if they exist)
-                sh 'docker compose down -v || true'
+                sh 'docker compose -p $COMPOSE_PROJECT_NAME down -v || true'
                 // Start services with dynamic project name, rebuild flask image
-                sh 'docker compose up -d --build'
+                sh 'docker compose -p $COMPOSE_PROJECT_NAME up -d --build'
             }
         }
     }
