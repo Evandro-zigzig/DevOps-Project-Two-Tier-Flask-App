@@ -16,7 +16,7 @@ services:
 
     networks:
       - two-tier-nt
-    command: --default-authentication-plugin=mysql_native_password  
+    command: --default-authentication-plugin=mysql_native_password --max_allowed_packet=16M --innodb_buffer_pool_size=256M  
 
     restart: always
     healthcheck:
